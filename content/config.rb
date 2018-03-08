@@ -10,6 +10,16 @@ ignore "ext/**/*"
 config[:file_watcher_ignore] += [/^(\/website\/)?ext\//]
 
 helpers do
+  # Returns a segment tracking ID such that local development is not
+  # tracked to production systems.
+  def segmentId()
+    if (ENV['ENV'] == 'production')
+      'EnEETDWhfxp1rp09jVvJr66LdvwI6KVP'
+    else
+      '0EXTgkNx0Ydje2PGXVbRhpKKoe5wtzcE'
+    end
+  end
+
   # Returns the FQDN of the image URL.
   #
   # @param [String] path

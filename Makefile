@@ -11,7 +11,7 @@ build:
 		--volume "$(shell pwd)/content:/website" \
 		--volume "$(shell pwd)/content/build:/website/build" \
 		hashicorp/middleman-hashicorp:${VERSION} \
-		bundle exec middleman build --verbose --clean
+		ENV=production bundle exec middleman build --verbose --clean
 
 website:
 	@echo "==> Starting website in Docker..."
